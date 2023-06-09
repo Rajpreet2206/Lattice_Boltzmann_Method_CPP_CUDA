@@ -66,3 +66,6 @@ The code initializes the Clang Index, parses the translation unit from the C++ s
 Please note that this is a simplified example, and parsing C++ code accurately can be a complex task due to the language's intricacies. It's highly recommended to use a robust tool like Clang for code analysis purposes.
 
 */
+
+//After running this successfully, store the names of all the functions in the source C++ file, and call Chorno:: functionality to analyze the 
+//execution times of them
