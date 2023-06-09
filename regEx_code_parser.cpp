@@ -33,3 +33,10 @@ int main() {
     return 0;
 }
 
+/*
+The identifyFunctions function uses regular expressions to match and extract function names from the provided code. It looks for patterns where a word followed by parentheses and a block of code indicates a function declaration. The extracted function names are then printed to the console.
+
+In the main function, the code reads the contents of the file specified by the path and passes it to identifyFunctions for analysis.
+
+Please note that this approach using regular expressions is a simple and limited way to identify functions in C++ code. It may not handle all possible function declarations and can produce false positives or miss certain cases. For more accurate and comprehensive parsing of C++ code, you should consider using dedicated C++ parsers or tools designed specifically for this purpose.
+*/
