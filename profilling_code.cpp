@@ -1,19 +1,19 @@
 #include<iostream>
 #include<cmath>
 #include<chrono>
-
+//The ideas can be extended to build a detailed PROFILER...To just profile all the "functions" in a particular C++ application
 double variable1;
 double variable2;
 
 void initialize(){
     
-    for(int i=0; i< 1000000000; ++i){
+    for(int i=0; i< 1000000000; ++i){ //Looping for 10^9 times
         variable1 = 2 + i;
     }
 }
 
 void another_init(){
-    for(int j=0; j<1000000000; ++j){
+    for(int j=0; j<1000000000; ++j){ //Looping for 10^9 times
         variable2 = 2*j;
     }
 }
@@ -39,5 +39,6 @@ int main(){
     std::cout<<"The initialized value of the variable2 is " << variable2 << std::endl;
     auto time_taken2 = time_taken_by_the_function(&another_init);
     std::cout<<"Time taken, returned as a RETURN value of the function another_init is " << time_taken2 << std::endl;
+
     return 0;
 }
