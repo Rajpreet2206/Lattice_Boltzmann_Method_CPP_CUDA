@@ -91,7 +91,7 @@ int main() {
     cudaMallocManaged(&feq, 9 * sizeof(float));
     auto Tend_malloc = std::chrono::high_resolution_clock::now();
     auto time_duration_malloc = std::chrono::duration_cast<std::chrono::milliseconds>(Tend_malloc - Tstart_malloc).count();
-    std::cout<< time_duration_malloc << " milliseconds " << std::endl;
+    std::cout<< " Memory Allocation through cudaMallocManaged takes " << time_duration_malloc << " milliseconds " << std::endl;
 //
     // Initialize weights and velocities
     for (a = 0; a < 9; a++) {
@@ -147,7 +147,7 @@ auto Tstart = std::chrono::high_resolution_clock::now();
     cudaDeviceSynchronize();
 auto Tend = std::chrono::high_resolution_clock::now();
 auto time_duration = std::chrono::duration_cast<std::chrono::milliseconds>(Tend - Tstart).count();
-std::cout<< time_duration << " milliseconds " << std::endl;
+std::cout<< "Initialization of the distributions takes "<< time_duration << " milliseconds " << std::endl;
 
     // Simulation loop
 auto TstartSL = std::chrono::high_resolution_clock::now();
@@ -158,9 +158,9 @@ auto TstartSL = std::chrono::high_resolution_clock::now();
     }
 auto TendSL = std::chrono::high_resolution_clock::now();
 auto time_durationSL = std::chrono::duration_cast<std::chrono::milliseconds>(TendSL - TstartSL).count();
-std::cout<< time_durationSL << " milliseconds " << std::endl;
+std::cout<<  "The Simulation loop takes "<< time_durationSL << " milliseconds " << std::endl;
 
-                                // Clean up GPU memory
+// Clean up GPU memory
     cudaFree(f);
     cudaFree(ft);
     cudaFree(isn);
@@ -172,4 +172,3 @@ std::cout<< time_durationSL << " milliseconds " << std::endl;
     cudaFree(feq);
     return 0;
 }
-
